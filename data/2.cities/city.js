@@ -2,52 +2,52 @@ const faker = require('faker')
 
 const json = [
   {
-    name: 'San Francisco',
+    name: 'Минеральные Воды',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'New York',
+    name: 'Пятигорск',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'Chicago',
+    name: 'Георгиевск',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'Bogotá',
+    name: 'Ессентуки',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'Bucaramanga',
+    name: 'Железноводск',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'Oakland',
+    name: 'Кисловодск',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'San Leandro',
+    name: 'Иноземцево',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'Medellín',
+    name: 'Невиномысск',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'Cali',
+    name: 'Ставрополь',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   },
   {
-    name: 'Barranquilla',
+    name: 'Краснодар',
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent()
   }
