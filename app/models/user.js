@@ -16,18 +16,19 @@ const UserSchema = new mongoose.Schema(
         message: 'EMAIL_IS_NOT_VALID'
       },
       lowercase: true,
-      unique: true,
-      required: true
+      unique: true
     },
     password: {
       type: String,
-      required: true,
       select: false
     },
     role: {
       type: String,
-      enum: ['user', 'admin'],
+      enum: ['user', 'manager', 'admin', 'client'],
       default: 'user'
+    },
+    verificationTime: {
+      type: Date
     },
     verification: {
       type: String
@@ -37,33 +38,21 @@ const UserSchema = new mongoose.Schema(
       default: false
     },
     phone: {
-      type: String
+      type: String,
+      validate: {
+        validator: validator.isPhone,
+        message: 'PHONE_IS_NOT_VALID'
+      },
+      required: true
+    },
+    postIndex: {
+      type: Number
     },
     city: {
       type: String
     },
     country: {
       type: String
-    },
-    urlTwitter: {
-      type: String,
-      validate: {
-        validator(v) {
-          return v === '' ? true : validator.isURL(v)
-        },
-        message: 'NOT_A_VALID_URL'
-      },
-      lowercase: true
-    },
-    urlGitHub: {
-      type: String,
-      validate: {
-        validator(v) {
-          return v === '' ? true : validator.isURL(v)
-        },
-        message: 'NOT_A_VALID_URL'
-      },
-      lowercase: true
     },
     loginAttempts: {
       type: Number,
@@ -74,6 +63,10 @@ const UserSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
       select: false
+    },
+    lastSeen: {
+      type: Date,
+      default: Date.now
     }
   },
   {
